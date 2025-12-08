@@ -65,15 +65,12 @@ func solvePuzzle(r io.Reader) (int, error) {
 		*cliques[i] = []int{i}
 	}
 
-	connections := make(map[int][]int)
 	for i := range potentialWires {
 		idx1 := potentialWires[i].idx1
 		idx2 := potentialWires[i].idx2
 		if cliques[idx1] == cliques[idx2] {
 			continue
 		}
-		connections[idx1] = append(connections[idx1], idx2)
-		connections[idx2] = append(connections[idx2], idx1)
 		*cliques[idx1] = append(*cliques[idx1], *cliques[idx2]...)
 		for _, j := range *cliques[idx2] {
 			cliques[j] = cliques[idx1]
