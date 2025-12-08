@@ -4,8 +4,8 @@ import (
 	"io"
 	"slices"
 
-	"github.com/AdventOfCodee894/aoc2025/internal/aocio"
-	"github.com/AdventOfCodee894/aoc2025/internal/aocmain"
+	"github.com/AdventOfCode894/aoc2025/internal/aocio"
+	"github.com/AdventOfCode894/aoc2025/internal/aocmain"
 )
 
 func main() {
