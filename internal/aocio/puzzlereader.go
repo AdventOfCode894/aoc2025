@@ -298,7 +298,7 @@ func (tr *TokenReader) NextIntArray(split rune, term rune, base int) []int {
 	pieces := &TokenReader{b: token, err: tr.err}
 	var out []int
 	if err := pieces.WalkArray(split, func(b []byte) error {
-		x, err := strconv.ParseInt(string(token), base, 64)
+		x, err := strconv.ParseInt(string(b), base, 64)
 		if err != nil {
 			return err
 		}
