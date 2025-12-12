@@ -60,11 +60,11 @@ func solvePuzzle(r io.Reader) (int, error) {
 			states[to].uncheckedInputs--
 			switch from {
 			case "fft":
-				states[to].pathsWithFFT += states[from].pathsWithFFT + states[from].pathsWithNeither
-				states[to].pathsWithBoth += states[from].pathsWithBoth + states[from].pathsWithDAC
+				states[to].pathsWithFFT += states[from].pathsWithNeither
+				states[to].pathsWithBoth += states[from].pathsWithDAC
 			case "dac":
-				states[to].pathsWithDAC += states[from].pathsWithDAC + states[from].pathsWithNeither
-				states[to].pathsWithBoth += states[from].pathsWithBoth + states[from].pathsWithFFT
+				states[to].pathsWithDAC += states[from].pathsWithNeither
+				states[to].pathsWithBoth += states[from].pathsWithFFT
 			default:
 				states[to].pathsWithNeither += states[from].pathsWithNeither
 				states[to].pathsWithDAC += states[from].pathsWithDAC
